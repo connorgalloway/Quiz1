@@ -25,23 +25,41 @@
 import csv
 
 # open the vendorlist file
+infile = open('VendorList.csv','r')
 
 
 # create a csv object from the file object
-
+#print(infile.read())
 
 # create an output file
-
+#outfile = open('marketinglistFINAL.csv','w')
 
 
 
 
 # create an empty dictionary
-
+customers = {}
+outfile = open('marketinglistFINAL.csv','w')
 
 
 # iterate through the csv object
+for line in infile:
+    line = line.split(",")
+    firstname = line[1]
+    lastname = line[2]
+    fullname = firstname +' ' + lastname
+    phone = line[5].rstrip('\n')
+    email = line[4]
+    customers[fullname] = {'email': email, 'phone': phone}
 
+#for i in customers.items():
+
+infile.close()
+
+
+
+
+    
 
 
 
